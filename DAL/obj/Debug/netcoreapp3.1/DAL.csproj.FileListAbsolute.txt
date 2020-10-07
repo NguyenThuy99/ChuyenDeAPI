@@ -1,0 +1,4 @@
+C:\Users\Nguyen Thuy\source\repos\doan5\DAL\bin\Debug\netcoreapp3.1\Model.dll
+C:\Users\Nguyen Thuy\source\repos\doan5\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+C:\Users\Nguyen Thuy\source\repos\doan5\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+C:\Users\Nguyen Thuy\source\repos\doan5\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
