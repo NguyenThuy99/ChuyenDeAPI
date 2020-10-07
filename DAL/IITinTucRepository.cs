@@ -10,6 +10,7 @@ namespace DAL
     public partial interface IITinTucRepository : ITinTucRepository
     {
         private IDatabaseHelper _dbHelper;
+        
         public IITinTucRepository(IDatabaseHelper dbHelper)
         {
             _dbHelper = dbHelper;
