@@ -40,7 +40,9 @@ namespace API
             services.AddControllers();
             services.AddTransient<IDatabaseHelper, DatabaseHelper>();
             services.AddTransient<ITinTucRepository, TinTucRepository>();
-             services.AddTransient<ITinTucBusiness, TinTucBusiness>();
+            services.AddTransient<ITinTucBusiness, TinTucBusiness>();
+            services.AddTransient<ILoaiTinRepository, LoaiTinRepository>();
+            services.AddTransient<ILoaiTinBusiness, LoaiTinBusiness>();
             /*      services.AddTransient<IItemRepository, ItemRepository>();
                services.AddTransient<IItemBusiness, ItemBusiness>();
                services.AddTransient<ICustomerRepository, CustomerRepository>();*/

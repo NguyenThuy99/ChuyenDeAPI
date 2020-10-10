@@ -1,13 +1,14 @@
 ﻿using DAL.Helper;
-using Model;
 using DAL.Interfaces;
+using Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DAL
 {
-  public partial class LoaiTinRepository: ILoaiTinRepository
+  public partial class LoaiTinRepository : ILoaiTinRepository
     {
         private IDatabaseHelper _dbHelper;
 
@@ -15,19 +16,15 @@ namespace DAL
         {
             _dbHelper = dbHelper;
         }
-        public bool Create(LoaiTin model)
+        public List<LoaiTin> GetData()
         {
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_item_create",
-                "@id", model.id,
-                "@tenloai", model.tenloai);
-                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
-                {
-                    throw new Exception(Convert.ToString(result) + msgError);
-                }
-                return true;
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_item_group_get_data");
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<LoaiTin>().ToList();
             }
             catch (Exception ex)
             {

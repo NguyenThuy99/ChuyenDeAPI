@@ -1,11 +1,11 @@
 ﻿using System;
-using Model;
 using System.Collections.Generic;
 using System.Text;
+using Model;
 
-namespace DAL.Interfaces
+namespace BLL
 {
-    public partial interface ILoaiTinRepository
+    public partial interface ILoaiTinBusiness
     {
         List<LoaiTin> GetData();
     }
