@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BLL;
 using DAL;
 using DAL.Helper;
+using DAL.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,12 +38,12 @@ namespace API
                 options.AddPolicy("AllowAll", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
             services.AddControllers();
-            /*services.AddTransient<IDatabaseHelper, DatabaseHelper>();
-            services.AddTransient<IItemGroupRepository, ItemGroupRepository>();
-            services.AddTransient<IItemGroupBusiness, ItemGroupBusiness>();
-            services.AddTransient<IItemRepository, ItemRepository>();
-            services.AddTransient<IItemBusiness, ItemBusiness>();
-            services.AddTransient<ICustomerRepository, CustomerRepository>();*/
+            services.AddTransient<IDatabaseHelper, DatabaseHelper>();
+            services.AddTransient<ITinTucRepository, TinTucRepository>();
+             services.AddTransient<ITinTucBusiness, TinTucBusiness>();
+            /*      services.AddTransient<IItemRepository, ItemRepository>();
+               services.AddTransient<IItemBusiness, ItemBusiness>();
+               services.AddTransient<ICustomerRepository, CustomerRepository>();*/
             /*services.AddTransient<ICustomerBusiness, CustomerBusiness>();*/
         }
 

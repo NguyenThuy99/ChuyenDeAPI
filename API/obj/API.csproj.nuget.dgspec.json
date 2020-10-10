@@ -91,7 +91,14 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Nguyen Thuy\\source\\repos\\doan5\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Nguyen Thuy\\source\\repos\\doan5\\DAL\\DAL.csproj"
+              },
+              "C:\\Users\\Nguyen Thuy\\source\\repos\\doan5\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Nguyen Thuy\\source\\repos\\doan5\\Model\\Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -159,6 +166,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
             "Microsoft.TeamFoundationServer.Client": {
               "target": "Package",
               "version": "[16.153.0, )"

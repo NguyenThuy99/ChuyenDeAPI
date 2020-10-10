@@ -10,7 +10,8 @@ namespace DAL.Interfaces
     {
         bool Create(TinTuc model);
         TinTuc GetDatabyID(string id);
-        List<ItemModel> GetDataAll();
-        List<ItemModel> Search(int pageIndex, int pageSize, out long total, string item_group_id);
+        List<TinTuc> GetDataAll();
+
+       
     }
 }
