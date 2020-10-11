@@ -34,6 +34,17 @@ namespace API.Controllers
         {
             return _itemBusiness.GetDatabyID(id);
         }
+
+        [Route("get-tin-theo-loai/{id}")]
+        [HttpGet]
+        public List<TinTuc> GetTinTheoLoai(int id)
+        {
+            return _itemBusiness.GetTinTheoLoai(id);
+        }
+
+
+
+
         [Route("get-all")]
         [HttpGet]
         public IEnumerable<TinTuc> GetDatabAll()

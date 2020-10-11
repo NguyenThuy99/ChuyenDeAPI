@@ -12,6 +12,8 @@ namespace DAL.Interfaces
         TinTuc GetDatabyID(string id);
         List<TinTuc> GetDataAll();
 
+        List<TinTuc> GetTinTheoLoai(int idloai);
+
        
     }
 }

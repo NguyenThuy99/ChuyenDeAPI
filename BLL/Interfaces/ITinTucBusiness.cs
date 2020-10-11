@@ -10,6 +10,8 @@ namespace BLL
         bool Create(TinTuc model);
         TinTuc GetDatabyID(string id);
         List<TinTuc> GetDataAll();
-       /* List<TinTuc> Search(int pageIndex, int pageSize, out long total, string item_group_id);*/
+
+        List<TinTuc> GetTinTheoLoai(int id);
+        /* List<TinTuc> Search(int pageIndex, int pageSize, out long total, string item_group_id);*/
     }
 }

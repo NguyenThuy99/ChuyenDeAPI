@@ -8,5 +8,7 @@ namespace Model
     {
         public string id { get; set; }
         public string tenloai { get; set; }
+       
+       
     }
 }

@@ -27,6 +27,11 @@ namespace BLL
         {
             return _res.GetDataAll();
         }
+
+        public   List<TinTuc> GetTinTheoLoai(int id)
+        {
+            return _res.GetTinTheoLoai(id);
+        }
         /* public List<TinTuc> Search(int pageIndex, int pageSize, out long total, string item_group_id)
          {
              return _res.Search(pageIndex, pageSize, out total, item_group_id);

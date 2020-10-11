@@ -18,12 +18,18 @@ namespace API.Controllers
         {
             _itemGroupBusiness = itemGroupBusiness;
         }
-
-        [Route("get-menu")]
+        [Route("get-all-loai")]
         [HttpGet]
-        public IEnumerable<LoaiTin> GetAllMenu()
+        public IEnumerable<LoaiTin> GetDatabAll()
         {
-            return _itemGroupBusiness.GetData();
+            return _itemGroupBusiness.GetDataAll();
         }
+
+        /* [Route("get-menu")]
+         [HttpGet]*/
+        /*  public IEnumerable<LoaiTin> GetAllMenu()
+          {
+              return _itemGroupBusiness.GetData();
+          }*/
     }
 }

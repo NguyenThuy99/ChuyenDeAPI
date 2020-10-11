@@ -58,6 +58,22 @@ namespace DAL
             }
         }
 
+       public List<TinTuc> GetTinTheoLoai(int idloai)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_tintuc_theoloai","@loaitin" , idloai);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<TinTuc>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public TinTuc GetDatabyID(string id)
         {
             throw new NotImplementedException();

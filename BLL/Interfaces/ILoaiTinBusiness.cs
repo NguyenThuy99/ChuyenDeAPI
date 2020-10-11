@@ -7,6 +7,7 @@ namespace BLL
 {
     public partial interface ILoaiTinBusiness
     {
-        List<LoaiTin> GetData();
+        public List<LoaiTin> GetDataAll();
+
     }
 }
