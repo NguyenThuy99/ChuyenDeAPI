@@ -6,8 +6,8 @@ namespace Model
 {
     public class ChuDe
     {
-        public string id { get; set; }
-        public string idcd{get; set; }
+        public int id { set; get; }
+        public int idcd{get; set; }
         public string tieude { get; set; }
         public DateTime ngaydang { get; set; }
         public string noidung { get; set; }

@@ -31,7 +31,7 @@ namespace DAL
                 throw ex;
             }
         }
-        public List<TinTuc> Search(int pageIndex, int pageSize, out long total, string idloai)
+       /* public List<TinTuc> Search(int pageIndex, int pageSize, out long total, string idloai)
         {
             string msgError = "";
             total = 0;
@@ -50,7 +50,7 @@ namespace DAL
             {
                 throw ex;
             }
-        }
+        }*/
         //public List<LoaiTin> GetData()
         //{
         //    string msgError = "";

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL;
+using BLL.Interfaces;
 using DAL;
 using DAL.Helper;
 using DAL.Interfaces;
@@ -43,9 +44,9 @@ namespace API
             services.AddTransient<ITinTucBusiness, TinTucBusiness>();
             services.AddTransient<ILoaiTinRepository, LoaiTinRepository>();
             services.AddTransient<ILoaiTinBusiness, LoaiTinBusiness>();
-            /*      services.AddTransient<IItemRepository, ItemRepository>();
-               services.AddTransient<IItemBusiness, ItemBusiness>();
-               services.AddTransient<ICustomerRepository, CustomerRepository>();*/
+            services.AddTransient<IChuDeRepository, ChuDeRepository>();
+            services.AddTransient<IChuDeBusiness, ChuDeBusiness>();
+               /*services.AddTransient<ICustomerRepository, CustomerRepository>();*/
             /*services.AddTransient<ICustomerBusiness, CustomerBusiness>();*/
         }
 
