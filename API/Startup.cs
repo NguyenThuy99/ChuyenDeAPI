@@ -52,6 +52,10 @@ namespace API
             services.AddTransient<IQuangCaoBusiness, QuangCaoBusiness>();
             services.AddTransient<ILoaiQuangCaoRepository, LoaiQuangCaoRepository>();
             services.AddTransient<ILoaiQuangCaoBusiness, LoaiQuangCaoBusiness>();
+            services.AddTransient<ITKBRepository, TKBRepository>();
+            services.AddTransient<ITKBBusiness, TKBBusiness>();
+            services.AddTransient<IThucDonRepository, ThucDonRepository>();
+            services.AddTransient<IThucDonBusiness, ThucDonBusiness>();
             /*services.AddTransient<ICustomerRepository, CustomerRepository>();*/
             /*services.AddTransient<ICustomerBusiness, CustomerBusiness>();*/
         }
