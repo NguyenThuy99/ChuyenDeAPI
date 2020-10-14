@@ -31,26 +31,7 @@ namespace DAL
                 throw ex;
             }
         }
-       /* public List<TinTuc> Search(int pageIndex, int pageSize, out long total, string idloai)
-        {
-            string msgError = "";
-            total = 0;
-            try
-            {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_item_search",
-                    "@page_index", pageIndex,
-                    "@page_size", pageSize,
-                    "@item_group_id", idloai);
-                if (!string.IsNullOrEmpty(msgError))
-                    throw new Exception(msgError);
-                if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
-                return dt.ConvertTo<TinTuc>().ToList();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }*/
+      
         //public List<LoaiTin> GetData()
         //{
         //    string msgError = "";

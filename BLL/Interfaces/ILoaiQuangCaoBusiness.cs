@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
-namespace BLL.Interfaces
+using Model;
+namespace BLL
 {
-    class ILoaiQuangCaoBusiness
+    public partial interface ILoaiQuangCaoBusiness
     {
+        public List<LoaiQuangCao> GetDataAll();
     }
 }

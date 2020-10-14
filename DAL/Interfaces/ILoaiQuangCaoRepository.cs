@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Model;
 
 namespace DAL.Interfaces
 {
-    class ILoaiQuangCaoRepository
+    public partial interface ILoaiQuangCaoRepository
     {
+        List<LoaiQuangCao> GetDataAll();
     }
 }
