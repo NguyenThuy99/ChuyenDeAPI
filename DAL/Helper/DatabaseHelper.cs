@@ -9,16 +9,16 @@ using System.Text;
 
 namespace DAL.Helper
 {
-    public class DatabaseHelper : IDatabaseHelper
+    public class DatabaseHelper : IDatabaseHelper//
     {
-
+        //
         //Connection String
         public string StrConnection { get; set; }
         //Connection
         public SqlConnection sqlConnection { get; set; }
         //NpgsqlTransaction 
         public SqlTransaction sqlTransaction { get; set; }
-
+        // 
         public DatabaseHelper(IConfiguration configuration)
         {
             StrConnection = configuration["ConnectionStrings:DefaultConnection"];
