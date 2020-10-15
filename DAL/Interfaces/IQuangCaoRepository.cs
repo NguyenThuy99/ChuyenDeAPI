@@ -9,5 +9,6 @@ namespace DAL.Interfaces
     {
         QuangCao GetDatabyID(string id);
         List<QuangCao> GetDataAll();
+        List<QuangCao> GetQuangCaoTheoLoai(int idqc);
     }
 }

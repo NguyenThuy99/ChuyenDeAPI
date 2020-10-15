@@ -46,5 +46,20 @@ namespace DAL
                 throw ex;
             }
         }
+        public List<QuangCao> GetQuangCaoTheoLoai(int idqc)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_quangcao_theoloai", "@loaitin", idqc);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<QuangCao>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

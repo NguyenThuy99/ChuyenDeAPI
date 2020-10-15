@@ -28,7 +28,10 @@ namespace BLL
         {
             return _res.GetDataAll();
         }
+        public List<QuangCao> GetQuangCaoTheoLoai(int id)
+        {
+            return _res.GetQuangCaoTheoLoai(id);
+        }
 
-        
     }
 }

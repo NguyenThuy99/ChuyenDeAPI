@@ -32,5 +32,11 @@ namespace API.Controllers
         {
             return _itemBusiness.GetDataAll();
         }
+        [Route("get-tin-theo-loai/{id}")]
+        [HttpGet]
+        public List<QuangCao> GetQuangCaoTheoLoai(int id)
+        {
+            return _itemBusiness.GetQuangCaoTheoLoai(id);
+        }
     }
 }

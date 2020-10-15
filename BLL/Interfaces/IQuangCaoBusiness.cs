@@ -9,5 +9,6 @@ namespace BLL
     {
         QuangCao GetDatabyID(string id);
         List<QuangCao> GetDataAll();
+        List<QuangCao> GetQuangCaoTheoLoai(int id);
     }
 }
