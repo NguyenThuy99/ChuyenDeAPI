@@ -12,6 +12,7 @@ using Model;
 
 namespace API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TaiKhoanController : ControllerBase
@@ -27,7 +28,7 @@ namespace API.Controllers
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody] AuthenticateModel model)
         {
-            var user = _userBusiness.Authenticate(model.Username, model.Password);
+            var user = _userBusiness.Authenticate(model.Usename, model.Password);
 
             if (user == null)
                 return BadRequest(new { message = "Username or password is incorrect" });

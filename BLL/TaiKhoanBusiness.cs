@@ -21,9 +21,9 @@ namespace BLL
             Secret = configuration["AppSettings:Secret"];
             _res = res;
         }
-        public TaiKhoan Authenticate(string username, string password)
+        public TaiKhoan Authenticate(string usename, string password)
         {
-            var user = _res.GetUser(username, password);
+            var user = _res.GetUser(usename,password);
             // return null if user not found
             if (user == null)
                 return null;

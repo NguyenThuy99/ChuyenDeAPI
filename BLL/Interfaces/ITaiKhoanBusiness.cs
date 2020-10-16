@@ -7,7 +7,7 @@ namespace BLL
 {
     public partial interface ITaiKhoanBusiness
     {
-        TaiKhoan Authenticate(string username, string password);
+        TaiKhoan Authenticate(string usename, string password);
         TaiKhoan GetDatabyID(string id);
     }
 }

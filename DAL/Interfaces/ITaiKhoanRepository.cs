@@ -7,7 +7,7 @@ namespace DAL.Interfaces
 {
     public interface ITaiKhoanRepository
     {
-        TaiKhoan GetUser(string username, string password);
+        TaiKhoan GetUser(string usename, string password);
         TaiKhoan GetDatabyID(string id);
     }
 }

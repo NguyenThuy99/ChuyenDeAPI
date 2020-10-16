@@ -15,14 +15,14 @@ namespace DAL
         {
             _dbHelper = dbHelper;
         }
-        public TaiKhoan GetUser(string username, string password)
+        public TaiKhoan GetUser(string usename, string password)
         {
             string msgError = "";
             try
             {
                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_user_get_by_username_password",
-                     "@taikhoan", username,
-                     "@matkhau", password);
+                     "@usename", usename,
+                     "@password", password);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
                 return dt.ConvertTo<TaiKhoan>().FirstOrDefault();
