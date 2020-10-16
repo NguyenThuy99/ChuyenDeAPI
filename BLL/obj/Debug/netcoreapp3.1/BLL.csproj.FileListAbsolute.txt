@@ -1,7 +1,6 @@
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
-C:\Users\Nguyen Thuy\source\repos\doan5\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\bin\Debug\netcoreapp3.1\BLL.dll
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
@@ -12,3 +11,4 @@ C:\Users\Nguyen Thuy\source\repos\doan5\BLL\bin\Debug\netcoreapp3.1\Model.pdb
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\obj\Debug\netcoreapp3.1\BLL.dll
 C:\Users\Nguyen Thuy\source\repos\doan5\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
+C:\Users\Nguyen Thuy\source\repos\doan5\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache

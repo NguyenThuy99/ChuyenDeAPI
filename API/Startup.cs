@@ -56,6 +56,8 @@ namespace API
             services.AddTransient<ITKBBusiness, TKBBusiness>();
             services.AddTransient<IThucDonRepository, ThucDonRepository>();
             services.AddTransient<IThucDonBusiness, ThucDonBusiness>();
+            services.AddTransient<ITaiKhoanRepository, TaiKhoanRepository>();
+            services.AddTransient<ITaiKhoanBusiness, TaiKhoanBusiness>();
             /*services.AddTransient<ICustomerRepository, CustomerRepository>();*/
             /*services.AddTransient<ICustomerBusiness, CustomerBusiness>();*/
         }

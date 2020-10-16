@@ -56,3 +56,7 @@ C:\Users\Nguyen Thuy\source\repos\doan5\API\obj\Debug\netcoreapp3.1\staticwebass
 C:\Users\Nguyen Thuy\source\repos\doan5\API\obj\Debug\netcoreapp3.1\API.dll
 C:\Users\Nguyen Thuy\source\repos\doan5\API\obj\Debug\netcoreapp3.1\API.pdb
 C:\Users\Nguyen Thuy\source\repos\doan5\API\obj\Debug\netcoreapp3.1\API.genruntimeconfig.cache
+C:\Users\Nguyen Thuy\source\repos\doan5\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Nguyen Thuy\source\repos\doan5\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Nguyen Thuy\source\repos\doan5\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Nguyen Thuy\source\repos\doan5\API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

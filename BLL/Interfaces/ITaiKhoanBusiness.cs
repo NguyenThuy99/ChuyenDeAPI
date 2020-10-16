@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Model;
 
-namespace BLL.Interfaces
+namespace BLL
 {
-    class ITaiKhoanBusiness
+    public partial interface ITaiKhoanBusiness
     {
+        TaiKhoan Authenticate(string username, string password);
+        TaiKhoan GetDatabyID(string id);
     }
 }
