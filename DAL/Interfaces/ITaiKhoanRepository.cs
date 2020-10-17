@@ -9,5 +9,8 @@ namespace DAL.Interfaces
     {
         TaiKhoan GetUser(string usename, string password);
         TaiKhoan GetDatabyID(string id);
+        bool Create(TaiKhoan model);
+        bool Update(TaiKhoan model);
+        bool Delete(string id);
     }
 }

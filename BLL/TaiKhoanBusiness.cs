@@ -47,7 +47,18 @@ namespace BLL
             return user;
 
         }
-
+        public bool Create(TaiKhoan model)
+        {
+            return _res.Create(model);
+        }
+        public bool Update(TaiKhoan model)
+        {
+            return _res.Update(model);
+        }
+        public bool Delete(string id)
+        {
+            return _res.Delete(id);
+        }
         public TaiKhoan GetDatabyID(string id)
         {
             return _res.GetDatabyID(id);

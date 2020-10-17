@@ -15,6 +15,77 @@ namespace DAL
         {
             _dbHelper = dbHelper;
         }
+        public bool Create(TaiKhoan model)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_taikhoan_create",
+                "@id", model.id,
+                "@usename", model.usename,
+                "@password", model.password,
+                "@role", model.role,
+                "@hoten", model.hoten,
+                "@ngaysinh", model.ngaysinh,
+                "@gioitinh", model.gioitinh,
+                "@email", model.email,
+                "@diachi", model.diachi);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Delete(string id)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_taikhoan_delete",
+                "@user_id", id);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Update(TaiKhoan model)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_taikhoan_update",
+                 "@id", model.id,
+                "@usename", model.usename,
+                "@password", model.password,
+                "@role", model.role,
+                "@hoten", model.hoten,
+                "@ngaysinh", model.ngaysinh,
+                "@gioitinh", model.gioitinh,
+                "@email", model.email,
+                "@diachi", model.diachi);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public TaiKhoan GetUser(string usename, string password)
         {
             string msgError = "";

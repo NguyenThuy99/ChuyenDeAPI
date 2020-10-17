@@ -9,5 +9,8 @@ namespace BLL
     {
         TaiKhoan Authenticate(string usename, string password);
         TaiKhoan GetDatabyID(string id);
+        bool Create(TaiKhoan model);
+        bool Update(TaiKhoan model);
+        bool Delete(string id);
     }
 }

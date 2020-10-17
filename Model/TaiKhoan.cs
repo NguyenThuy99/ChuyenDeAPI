@@ -8,12 +8,14 @@ namespace Model
     {
         public string id { get; set; }
         public string usename { get; set; }
-        public string passwword { get; set; }
+        public string password { get; set; }
         public string role { get; set; }
         public string hoten { get; set; }
         public DateTime ngaysinh { get; set; }
         public string diachi { get; set; }
         public string email { get; set; }
+        public string gioitinh { get; set; }
         public string token { get; set; }
+
     }
 }

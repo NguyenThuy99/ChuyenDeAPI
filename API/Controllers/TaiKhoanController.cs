@@ -62,5 +62,51 @@ namespace API.Controllers
             }
         }
 
+        [Route("delete-taikhoan")]
+        [HttpPost]
+        public IActionResult DeleteUser([FromBody] Dictionary<string, object> formData)
+        {
+            string user_id = "";
+            if (formData.Keys.Contains("id") && !string.IsNullOrEmpty(Convert.ToString(formData["id"]))) { user_id = Convert.ToString(formData["id"]); }
+            _userBusiness.Delete(user_id);
+            return Ok();
+        }
+
+        [Route("create-taikhoan")]
+        [HttpPost]
+        public TaiKhoan CreateUser([FromBody] TaiKhoan model)
+        {
+            /*if (model.image_url != null)
+            {
+                var arrData = model.image_url.Split(';');
+                if (arrData.Length == 3)
+                {
+                    var savePath = $@"assets/images/{arrData[0]}";
+                    model.image_url = $"{savePath}";
+                    SaveFileFromBase64String(savePath, arrData[2]);
+                }
+            }*/
+            model.id = Guid.NewGuid().ToString();
+            _userBusiness.Create(model);
+            return model;
+        }
+
+        [Route("update-taikhoan")]
+        [HttpPost]
+        public TaiKhoan UpdateUser([FromBody] TaiKhoan model)
+        {
+           /* if (model.image_url != null)
+            {
+                var arrData = model.image_url.Split(';');
+                if (arrData.Length == 3)
+                {
+                    var savePath = $@"assets/images/{arrData[0]}";
+                    model.image_url = $"{savePath}";
+                    SaveFileFromBase64String(savePath, arrData[2]);
+                }
+            }*/
+            _userBusiness.Create(model);
+            return model;
+        }
     }
 }
