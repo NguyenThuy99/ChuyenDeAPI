@@ -11,7 +11,8 @@ namespace DAL.Interfaces
         bool Create(TinTuc model);
         TinTuc GetDatabyID(string id);
         List<TinTuc> GetDataAll();
-
+        bool Update(TinTuc model);
+        bool Delete(string id);
         List<TinTuc> GetTinTheoLoai(int idloai);
 
        

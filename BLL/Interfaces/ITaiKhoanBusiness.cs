@@ -12,5 +12,7 @@ namespace BLL
         bool Create(TaiKhoan model);
         bool Update(TaiKhoan model);
         bool Delete(string id);
+        List<TaiKhoan> Search(int pageIndex, int pageSize, out long total, string hoten, string usename);
+
     }
 }

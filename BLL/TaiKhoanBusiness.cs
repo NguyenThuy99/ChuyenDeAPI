@@ -63,5 +63,9 @@ namespace BLL
         {
             return _res.GetDatabyID(id);
         }
+        public List<TaiKhoan> Search(int pageIndex, int pageSize, out long total, string hoten, string usename)
+        {
+            return _res.Search(pageIndex, pageSize, out total, hoten, usename);
+        }
     }
 }

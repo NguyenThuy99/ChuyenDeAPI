@@ -66,9 +66,9 @@ namespace API.Controllers
         [HttpPost]
         public IActionResult DeleteUser([FromBody] Dictionary<string, object> formData)
         {
-            string user_id = "";
-            if (formData.Keys.Contains("id") && !string.IsNullOrEmpty(Convert.ToString(formData["id"]))) { user_id = Convert.ToString(formData["id"]); }
-            _userBusiness.Delete(user_id);
+            string id = "";
+            if (formData.Keys.Contains("id") && !string.IsNullOrEmpty(Convert.ToString(formData["id"]))) { id = Convert.ToString(formData["id"]); }
+            _userBusiness.Delete(id);
             return Ok();
         }
 
@@ -95,18 +95,41 @@ namespace API.Controllers
         [HttpPost]
         public TaiKhoan UpdateUser([FromBody] TaiKhoan model)
         {
-           /* if (model.image_url != null)
-            {
-                var arrData = model.image_url.Split(';');
-                if (arrData.Length == 3)
-                {
-                    var savePath = $@"assets/images/{arrData[0]}";
-                    model.image_url = $"{savePath}";
-                    SaveFileFromBase64String(savePath, arrData[2]);
-                }
-            }*/
-            _userBusiness.Create(model);
+          
+            _userBusiness.Update(model);
             return model;
+        }
+        [Route("get-by-id/{id}")]
+        [HttpGet]
+        public TaiKhoan GetDatabyID(string id)
+        {
+            return _userBusiness.GetDatabyID(id);
+        }
+        [Route("search")]
+        [HttpPost]
+        public ResponseModel Search([FromBody] Dictionary<string, object> formData)
+        {
+            var response = new ResponseModel();
+            try
+            {
+                var page = int.Parse(formData["page"].ToString());
+                var pageSize = int.Parse(formData["pageSize"].ToString());
+                string hoten = "";
+                if (formData.Keys.Contains("hoten") && !string.IsNullOrEmpty(Convert.ToString(formData["hoten"]))) { hoten = Convert.ToString(formData["hoten"]); }
+                string usename = "";
+                if (formData.Keys.Contains("usename") && !string.IsNullOrEmpty(Convert.ToString(formData["usename"]))) { hoten = Convert.ToString(formData["usename"]); }
+                long total = 0;
+                var data = _userBusiness.Search(page, pageSize, out total, hoten, usename);
+                response.TotalItems = total;
+                response.Data = data;
+                response.Page = page;
+                response.PageSize = pageSize;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return response;
         }
     }
 }

@@ -120,5 +120,26 @@ namespace DAL
                 throw ex;
             }
         }
+        public List<TaiKhoan> Search(int pageIndex, int pageSize, out long total, string hoten, string usename)
+        {
+            string msgError = "";
+            total = 0;
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_taikhoan_search",
+                    "@page_index", pageIndex,
+                    "@page_size", pageSize,
+                    "@hoten", hoten,
+                    "@usename", usename);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
+                return dt.ConvertTo<TaiKhoan>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

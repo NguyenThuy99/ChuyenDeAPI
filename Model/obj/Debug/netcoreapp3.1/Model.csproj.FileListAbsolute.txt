@@ -1,7 +1,6 @@
 C:\Users\Nguyen Thuy\source\repos\doan5\Model\bin\Debug\netcoreapp3.1\Model.deps.json
 C:\Users\Nguyen Thuy\source\repos\doan5\Model\bin\Debug\netcoreapp3.1\Model.dll
 C:\Users\Nguyen Thuy\source\repos\doan5\Model\bin\Debug\netcoreapp3.1\Model.pdb
-C:\Users\Nguyen Thuy\source\repos\doan5\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
 C:\Users\Nguyen Thuy\source\repos\doan5\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
 C:\Users\Nguyen Thuy\source\repos\doan5\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
 C:\Users\Nguyen Thuy\source\repos\doan5\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache

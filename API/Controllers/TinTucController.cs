@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL;
@@ -15,18 +16,78 @@ namespace API.Controllers
     public class TinTucController : ControllerBase
     {
         private ITinTucBusiness _itemBusiness;
+        private string _path;
+
         public TinTucController(ITinTucBusiness itemBusiness)
         {
             _itemBusiness = itemBusiness;
         }
 
-        [Route("create-item")]
-        [HttpPost]
-        public TinTuc CreateItem([FromBody] TinTuc model)
+        public string SaveFileFromBase64String(string RelativePathFileName, string dataFromBase64String)
         {
+            if (dataFromBase64String.Contains("base64,"))
+            {
+                dataFromBase64String = dataFromBase64String.Substring(dataFromBase64String.IndexOf("base64,", 0) + 7);
+            }
+            return WriteFileToAuthAccessFolder(RelativePathFileName, dataFromBase64String);
+        }
+        public string WriteFileToAuthAccessFolder(string RelativePathFileName, string base64StringData)
+        {
+            try
+            {
+                string result = "";
+                string serverRootPathFolder = _path;
+                string fullPathFile = $@"{serverRootPathFolder}\{RelativePathFileName}";
+                string fullPathFolder = System.IO.Path.GetDirectoryName(fullPathFile);
+                if (!Directory.Exists(fullPathFolder))
+                    Directory.CreateDirectory(fullPathFolder);
+                System.IO.File.WriteAllBytes(fullPathFile, Convert.FromBase64String(base64StringData));
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        [Route("delete-tintuc")]
+        [HttpPost]
+        public IActionResult DeleteUser([FromBody] Dictionary<string, object> formData)
+        {
+            string id = "";
+            if (formData.Keys.Contains("id") && !string.IsNullOrEmpty(Convert.ToString(formData["id"]))) { id = Convert.ToString(formData["id"]); }
+            _itemBusiness.Delete(id);
+            return Ok();
+        }
+
+        [Route("create-tintuc")]
+        [HttpPost]
+        public TinTuc CreateUser([FromBody] TinTuc model)
+        {
+            if (model.hinhanh != null)
+            {
+                var arrData = model.hinhanh.Split(';');
+                if (arrData.Length == 3)
+                {
+                    var savePath = $@"assets/images/{arrData[0]}";
+                    model.hinhanh = $"{savePath}";
+                    SaveFileFromBase64String(savePath, arrData[2]);
+                }
+            }
+            model.id = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }
+
+        [Route("update-tintuc")]
+        [HttpPost]
+        public TinTuc UpdateUser([FromBody] TinTuc model)
+        {
+
+            _itemBusiness.Update(model);
+            return model;
+        }
+        [Route("get-by-id/{id}")]
+        [HttpGet]
 
         [Route("get-by-id/{id}")]
         [HttpGet]
