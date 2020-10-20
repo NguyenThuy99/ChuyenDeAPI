@@ -33,7 +33,7 @@ namespace BLL
         {
             return _res.GetTinTheoLoai(id);
         }
-        public bool Delete(string id)
+        public bool Delete(int id)
         {
             return _res.Delete(id);
         }

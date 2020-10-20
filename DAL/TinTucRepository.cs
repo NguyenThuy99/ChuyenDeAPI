@@ -23,12 +23,12 @@ namespace DAL
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_tintuc_create",
-                "@id", model.id,
+                //"@id", model.id,
                 "@idloai", model.idloai,
                 "@tieude", model.tieude,
                 "@hinhanh", model.hinhanh,
                 "@mota", model.mota,
-                "@ngaydang", model.ngaydang,
+           
                 "@noidung", model.noidung);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -75,7 +75,7 @@ namespace DAL
         }
        
 
-        public bool Delete(string id)
+        public bool Delete(int id)
         {
             string msgError = "";
             try
@@ -104,7 +104,7 @@ namespace DAL
                 "@tieude", model.tieude,
                 "@hinhanh", model.hinhanh,
                 "@mota", model.mota,
-                "@ngaydang", model.ngaydang,
+
                 "@noidung", model.noidung);
 
               

@@ -11,7 +11,7 @@ namespace BLL
         TinTuc GetDatabyID(string id);
         List<TinTuc> GetDataAll();
         bool Update(TinTuc model);
-        bool Delete(string id);
+        bool Delete(int id);
         List<TinTuc> GetTinTheoLoai(int id);
         /* List<TinTuc> Search(int pageIndex, int pageSize, out long total, string item_group_id);*/
     }

@@ -49,19 +49,19 @@ namespace API.Controllers
                 return ex.Message;
             }
         }
-        [Route("delete-tintuc")]
-        [HttpPost]
-        public IActionResult DeleteUser([FromBody] Dictionary<string, object> formData)
+        [Route("delete-tintuc/{id}")]
+        [HttpGet]
+        public IActionResult DeleteUser(int id)
         {
-            string id = "";
-            if (formData.Keys.Contains("id") && !string.IsNullOrEmpty(Convert.ToString(formData["id"]))) { id = Convert.ToString(formData["id"]); }
+            
+          
             _itemBusiness.Delete(id);
             return Ok();
         }
 
         [Route("create-tintuc")]
         [HttpPost]
-        public TinTuc CreateUser([FromBody] TinTuc model)
+        public TinTuc CreateTintuc([FromBody] TinTuc model)
         {
             if (model.hinhanh != null)
             {
@@ -73,7 +73,7 @@ namespace API.Controllers
                     SaveFileFromBase64String(savePath, arrData[2]);
                 }
             }
-            model.id = Guid.NewGuid().ToString();
+            //model.id = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }
@@ -86,8 +86,7 @@ namespace API.Controllers
             _itemBusiness.Update(model);
             return model;
         }
-        [Route("get-by-id/{id}")]
-        [HttpGet]
+    
 
         [Route("get-by-id/{id}")]
         [HttpGet]
