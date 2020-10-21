@@ -31,7 +31,69 @@ namespace DAL
                 throw ex;
             }
         }
-      
+
+        public bool Delete(int id)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_loaitin_delete",
+                "@id", id);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Update(LoaiTin model)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_loaitin_update",
+                    "@id", model.id,
+                "@tenloai", model.tenloai,
+
+                "@mota", model.mota);
+
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Create(LoaiTin model)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_loaitin_create",
+                //"@id", model.id,
+                "@tenloai", model.tenloai,
+                
+                "@mota", model.mota);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         //public List<LoaiTin> GetData()
         //{
         //    string msgError = "";

@@ -24,5 +24,36 @@ namespace API.Controllers
         {
             return _itemGroupBusiness.GetDataAll();
         }
+        [Route("delete-tintuc/{id}")]
+        [HttpGet]
+        public IActionResult DeleteUser(int id)
+        {
+
+
+            _itemGroupBusiness.Delete(id);
+            return Ok();
+        }
+
+        [Route("create-tintuc")]
+        [HttpPost]
+        public LoaiChuDe CreateTintuc([FromBody] LoaiChuDe model)
+        {
+            /* if (model.hinhanh != null)
+             {
+                 var arrData = model.hinhanh.Split(';');
+                 if (arrData.Length == 3)
+                 {
+                     var savePath = $@"assets/images/{arrData[0]}";
+                     model.hinhanh = $"{savePath}";
+                     SaveFileFromBase64String(savePath, arrData[2]);
+                 }
+             }*/
+            //model.id = Guid.NewGuid().ToString();
+            _itemGroupBusiness.Create(model);
+            return model;
+        }
+
+        [Route("update-tintuc")]
+        [HttpPost]
     }
 }

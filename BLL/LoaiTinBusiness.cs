@@ -20,6 +20,18 @@ namespace BLL
         {
             return _res.GetDataAll();
         }
+        public bool Delete(int id)
+        {
+            return _res.Delete(id);
+        }
+        public bool Update(LoaiTin model)
+        {
+            return _res.Update(model);
+        }
+        public bool Create(LoaiTin model)
+        {
+            return _res.Create(model);
+        }
         /*   public List<LoaiTin> GetData()
            {
                return _res.GetData();

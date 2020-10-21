@@ -7,9 +7,11 @@ namespace DAL.Interfaces
 {
     public partial interface ILoaiTinRepository
     {
-      /*  bool Create(TinTuc model);*/
+        bool Create(LoaiTin model);
        /* TinTuc GetDatabyID(string id);*/
         List<LoaiTin> GetDataAll();
-       /* List<LoaiTin> GetData();*/
+        /* List<LoaiTin> GetData();*/
+        bool Update(LoaiTin model);
+        bool Delete(int id);
     }
 }

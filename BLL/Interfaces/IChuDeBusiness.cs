@@ -7,6 +7,8 @@ namespace BLL.Interfaces
 {
     public partial interface IChuDeBusiness
     {
+        bool Update(ChuDe model);
+        bool Delete(int id);
         bool Create(ChuDe model);
         ChuDe GetDatabyID(string id);
         List<ChuDe> GetDataAll();

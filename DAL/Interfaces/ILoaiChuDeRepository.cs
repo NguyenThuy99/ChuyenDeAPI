@@ -7,6 +7,9 @@ namespace DAL
 {
     public partial interface ILoaiChuDeRepository
     {
+        bool Update(LoaiChuDe model);
+        bool Delete(int id);
+        bool Create(LoaiChuDe model);
         List<LoaiChuDe> GetDataAll();
     }
 }

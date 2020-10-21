@@ -29,6 +29,14 @@ namespace BLL
         {
             return _res.GetDataAll();
         }
+        public bool Delete(int id)
+        {
+            return _res.Delete(id);
+        }
+        public bool Update(ChuDe model)
+        {
+            return _res.Update(model);
+        }
         /*
                 public List<ChuDe> GetTinTheoLoai(int id)
                 {

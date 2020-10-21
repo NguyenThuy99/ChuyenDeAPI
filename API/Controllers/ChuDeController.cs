@@ -39,5 +39,21 @@ namespace API.Controllers
         {
             return _itemBusiness.GetDataAll();
         }
+        [Route("delete-chude/{id}")]
+        [HttpGet]
+        public IActionResult DeleteUser(int id)
+        {
+            _itemBusiness.Delete(id);
+            return Ok();
+        }
+        [Route("update-chude")]
+        [HttpPost]
+        public ChuDe UpdateUser([FromBody] ChuDe model)
+        {
+
+            _itemBusiness.Update(model);
+            return model;
+        }
+
     }
 }

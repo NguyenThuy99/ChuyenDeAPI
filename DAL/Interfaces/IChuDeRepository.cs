@@ -7,6 +7,8 @@ namespace DAL.Interfaces
 {
     public interface IChuDeRepository
     {
+        bool Update(ChuDe model);
+        bool Delete(int id);
         bool Create(ChuDe model);
         ChuDe GetDatabyID(string id);
         public List<ChuDe> GetDataAll();

@@ -7,6 +7,9 @@ namespace BLL
 {
     public partial interface ILoaiChuDeBusiness
     {
+        bool Create(LoaiChuDe model);
+        bool Update(LoaiChuDe model);
+        bool Delete(int id);
         public List<LoaiChuDe> GetDataAll();
     }
 }

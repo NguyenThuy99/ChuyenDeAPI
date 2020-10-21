@@ -16,6 +16,48 @@ namespace DAL
         {
             _dbHelper = dbHelper;
         }
+        public bool Delete(int id)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_chude_delete",
+                "@id", id);
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Update(ChuDe model)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_chude_update",
+                    "@id", model.id,
+                "@idcd", model.idcd,
+                "@tieude", model.tieude,
+                "@ngaydang", model.ngaydang,                
+                "@noidung", model.noidung);
+
+
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public bool Create(ChuDe model)
         {
