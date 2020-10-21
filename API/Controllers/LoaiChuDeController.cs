@@ -55,5 +55,11 @@ namespace API.Controllers
 
         [Route("update-tintuc")]
         [HttpPost]
+        public LoaiChuDe UpdateUser([FromBody] LoaiChuDe model)
+        {
+
+            _itemGroupBusiness.Update(model);
+            return model;
+        }
     }
 }
