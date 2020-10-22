@@ -54,6 +54,12 @@ namespace API.Controllers
             _itemBusiness.Update(model);
             return model;
         }
+        [Route("get-tin-theo-loaichude/{id}")]
+        [HttpGet]
+        public List<ChuDe> GetTinTheoLoai(int id)
+        {
+            return _itemBusiness.GetTinTheoLoai(id);
+        }
 
     }
 }

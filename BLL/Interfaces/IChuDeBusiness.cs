@@ -13,6 +13,6 @@ namespace BLL.Interfaces
         ChuDe GetDatabyID(string id);
         List<ChuDe> GetDataAll();
 
-        /*List<ChuDe> GetTinTheoLoai(int id);*/
+        List<ChuDe> GetTinTheoLoai(int id);
     }
 }

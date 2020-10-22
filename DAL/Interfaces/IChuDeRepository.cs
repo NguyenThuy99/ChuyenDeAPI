@@ -12,7 +12,7 @@ namespace DAL.Interfaces
         bool Create(ChuDe model);
         ChuDe GetDatabyID(string id);
         public List<ChuDe> GetDataAll();
-
-     /*   List<ChuDe> GetTinTheoLoai(int idloai);*/
+        List<ChuDe> GetTinTheoLoai(int idcd);
+        /*   List<ChuDe> GetTinTheoLoai(int idloai);*/
     }
 }

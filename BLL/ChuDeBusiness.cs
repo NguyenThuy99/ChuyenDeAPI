@@ -37,10 +37,10 @@ namespace BLL
         {
             return _res.Update(model);
         }
-        /*
-                public List<ChuDe> GetTinTheoLoai(int id)
-                {
-                    return _res.GetTinTheoLoai(id);
-                }*/
+       
+        public List<ChuDe> GetTinTheoLoai(int id)
+        {
+             return _res.GetTinTheoLoai(id);
+        }
     }
 }
