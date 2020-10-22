@@ -13,5 +13,6 @@ namespace DAL.Interfaces
         /* List<LoaiTin> GetData();*/
         bool Update(LoaiTin model);
         bool Delete(int id);
+        LoaiTin GetDatabyID(string id);
     }
 }

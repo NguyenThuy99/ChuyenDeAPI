@@ -11,5 +11,6 @@ namespace BLL
         bool Update(LoaiChuDe model);
         bool Delete(int id);
         public List<LoaiChuDe> GetDataAll();
+        LoaiChuDe GetDatabyID(string id);
     }
 }

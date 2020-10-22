@@ -11,5 +11,6 @@ namespace DAL
         bool Delete(int id);
         bool Create(LoaiChuDe model);
         List<LoaiChuDe> GetDataAll();
+        LoaiChuDe GetDatabyID(string id);
     }
 }

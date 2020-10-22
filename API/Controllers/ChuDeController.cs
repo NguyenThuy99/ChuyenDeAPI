@@ -19,7 +19,7 @@ namespace API.Controllers
             _itemBusiness = itemBusiness;
         }
 
-        [Route("create-item")]
+        [Route("create-chude")]
         [HttpPost]
         public ChuDe CreateItem([FromBody] ChuDe model)
         {

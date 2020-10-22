@@ -32,6 +32,10 @@ namespace BLL
         {
             return _res.Create(model);
         }
+        public LoaiTin GetDatabyID(string id)
+        {
+            return _res.GetDatabyID(id);
+        }
         /*   public List<LoaiTin> GetData()
            {
                return _res.GetData();

@@ -19,5 +19,17 @@ namespace BLL
         {
             return _res.GetDataAll();
         }
+        public bool Delete(int id)
+        {
+            return _res.Delete(id);
+        }
+        public bool Update(TKB model)
+        {
+            return _res.Update(model);
+        }
+        public bool Create(TKB model)
+        {
+            return _res.Create(model);
+        }
     }
 }

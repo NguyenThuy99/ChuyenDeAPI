@@ -7,6 +7,9 @@ namespace DAL.Interfaces
 {
     public partial interface ILoaiQuangCaoRepository
     {
+        bool Update(LoaiQuangCao model);
+        bool Delete(int id);
+        bool Create(LoaiQuangCao model);
         List<LoaiQuangCao> GetDataAll();
     }
 }

@@ -11,5 +11,6 @@ namespace BLL
         public List<LoaiTin> GetDataAll();
         bool Update(LoaiTin model);
         bool Delete(int id);
+        LoaiTin GetDatabyID(string id);
     }
 }

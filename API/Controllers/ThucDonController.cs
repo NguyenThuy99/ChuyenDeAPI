@@ -26,5 +26,42 @@ namespace API.Controllers
         {
             return _itemBusiness.GetDataAll();
         }
+        [Route("delete-thucdon/{id}")]
+        [HttpGet]
+        public IActionResult DeleteUser(int id)
+        {
+
+
+            _itemBusiness.Delete(id);
+            return Ok();
+        }
+
+        [Route("create-thucdon")]
+        [HttpPost]
+        public ThucDon CreateTintuc([FromBody] ThucDon model)
+        {
+            /* if (model.hinhanh != null)
+             {
+                 var arrData = model.hinhanh.Split(';');
+                 if (arrData.Length == 3)
+                 {
+                     var savePath = $@"assets/images/{arrData[0]}";
+                     model.hinhanh = $"{savePath}";
+                     SaveFileFromBase64String(savePath, arrData[2]);
+                 }
+             }*/
+            //model.id = Guid.NewGuid().ToString();
+            _itemBusiness.Create(model);
+            return model;
+        }
+
+        [Route("update-thucdon")]
+        [HttpPost]
+        public ThucDon UpdateUser([FromBody] ThucDon model)
+        {
+
+            _itemBusiness.Update(model);
+            return model;
+        }
     }
 }

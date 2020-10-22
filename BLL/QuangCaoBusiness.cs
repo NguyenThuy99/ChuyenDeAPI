@@ -32,6 +32,17 @@ namespace BLL
         {
             return _res.GetQuangCaoTheoLoai(id);
         }
-
+        public bool Delete(int id)
+        {
+            return _res.Delete(id);
+        }
+        public bool Update(QuangCao model)
+        {
+            return _res.Update(model);
+        }
+        public bool Create(QuangCao model)
+        {
+            return _res.Create(model);
+        }
     }
 }

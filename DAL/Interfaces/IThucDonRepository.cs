@@ -7,6 +7,9 @@ namespace DAL.Interfaces
 {
     public partial interface IThucDonRepository
     {
+        bool Update(ThucDon model);
+        bool Delete(int id);
+        bool Create(ThucDon model);
         List<ThucDon> GetDataAll();
     }
 }

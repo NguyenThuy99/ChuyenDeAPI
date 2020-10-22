@@ -31,5 +31,9 @@ namespace BLL
         {
             return _res.Create(model);
         }
+        public LoaiChuDe GetDatabyID(string id)
+        {
+            return _res.GetDatabyID(id);
+        }
     }
 }

@@ -93,7 +93,22 @@ namespace DAL
                 throw ex;
             }
         }
-
+        public LoaiTin GetDatabyID(string id)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "loaitin_id",
+                     "@id", id);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<LoaiTin>().FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         //public List<LoaiTin> GetData()
         //{
         //    string msgError = "";

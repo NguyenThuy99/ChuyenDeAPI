@@ -24,7 +24,7 @@ namespace API.Controllers
         {
             return _itemGroupBusiness.GetDataAll();
         }
-        [Route("delete-tintuc/{id}")]
+        [Route("delete-loaichude/{id}")]
         [HttpGet]
         public IActionResult DeleteUser(int id)
         {
@@ -34,7 +34,7 @@ namespace API.Controllers
             return Ok();
         }
 
-        [Route("create-tintuc")]
+        [Route("create-loaichude")]
         [HttpPost]
         public LoaiChuDe CreateTintuc([FromBody] LoaiChuDe model)
         {
@@ -53,13 +53,19 @@ namespace API.Controllers
             return model;
         }
 
-        [Route("update-tintuc")]
+        [Route("update-loaichude")]
         [HttpPost]
         public LoaiChuDe UpdateUser([FromBody] LoaiChuDe model)
         {
 
             _itemGroupBusiness.Update(model);
             return model;
+        }
+        [Route("get-by-id-loaichude/{id}")]
+        [HttpGet]
+        public LoaiChuDe GetDatabyID(string id)
+        {
+            return _itemGroupBusiness.GetDatabyID(id);
         }
     }
 }
