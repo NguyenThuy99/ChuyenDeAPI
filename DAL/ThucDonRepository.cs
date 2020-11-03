@@ -55,7 +55,7 @@ namespace DAL
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_thucdon_update",
-                   "@id", model.id,
+                 "@id", model.id,
                 "@tieude", model.tieude,
                 "@thoigian", model.thoigian,
                 "@hinhanh", model.hinhanh);
@@ -79,10 +79,10 @@ namespace DAL
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_thucdon_create",
-                "@id", model.id,
+             /*   "@id", model.id,*/
                
                 "@tieude", model.tieude,
-                "@thoigian", model.thoigian,
+               /* "@thoigian", model.thoigian,*/
                 "@hinhanh", model.hinhanh);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -96,6 +96,21 @@ namespace DAL
             }
 
         }
-
+        public ThucDon GetDatabyID(string id)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "thucdon_id",
+                     "@id", id);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<ThucDon>().FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

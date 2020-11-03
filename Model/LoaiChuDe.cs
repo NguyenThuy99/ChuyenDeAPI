@@ -6,7 +6,7 @@ namespace Model
 {
     public class LoaiChuDe
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string tenchude { get; set; }
     }
 }

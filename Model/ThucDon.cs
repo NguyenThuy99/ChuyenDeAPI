@@ -6,7 +6,7 @@ namespace Model
 {
     public class ThucDon
     {
-        public string id { get; set; }
+        public int id { get; set; }
        
         public string tieude { get; set; }
       

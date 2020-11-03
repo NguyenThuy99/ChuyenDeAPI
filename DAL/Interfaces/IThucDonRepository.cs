@@ -11,5 +11,6 @@ namespace DAL.Interfaces
         bool Delete(int id);
         bool Create(ThucDon model);
         List<ThucDon> GetDataAll();
+        ThucDon GetDatabyID(string id);
     }
 }

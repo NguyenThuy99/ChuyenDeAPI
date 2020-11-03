@@ -54,13 +54,20 @@ namespace API.Controllers
             return model;
         }
 
-        [Route("update-loaitintuc")]
+        [Route("update-tkb")]
         [HttpPost]
         public TKB UpdateUser([FromBody] TKB model)
         {
 
             _itemBusiness.Update(model);
             return model;
+        }
+
+        [Route("get-by-id/{id}")]
+        [HttpGet]
+        public TKB GetDatabyID(string id)
+        {
+            return _itemBusiness.GetDatabyID(id);
         }
     }
 }

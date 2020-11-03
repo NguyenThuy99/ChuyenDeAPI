@@ -11,5 +11,6 @@ namespace BLL
         bool Delete(int id);
         bool Create(TKB model);
         List<TKB> GetDataAll();
+        TKB GetDatabyID(string id);
     }
 }

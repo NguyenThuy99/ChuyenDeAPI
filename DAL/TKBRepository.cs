@@ -79,7 +79,7 @@ namespace DAL
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_tkb_create",
-                 "@id", model.id,
+               /*  "@id", model.id,*/
                 "@ten", model.ten,
 
                 "@hinhanh", model.hinhanh);
@@ -94,6 +94,22 @@ namespace DAL
                 throw ex;
             }
 
+        }
+        public TKB GetDatabyID(string id)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "tkb_id",
+                     "@id", id);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<TKB>().FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

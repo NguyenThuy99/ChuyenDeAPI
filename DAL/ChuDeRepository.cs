@@ -64,11 +64,11 @@ namespace DAL
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_chude_all",
-                "@id", model.id,
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_chude_create",
+               /* "@id", model.id,*/
                 "@idcd", model.idcd,
                 "@tieude", model.tieude,
-                "@ngaydang", model.ngaydang,
+             /*   "@ngaydang", model.ngaydang,*/
                 "@noidung", model.noidung);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {

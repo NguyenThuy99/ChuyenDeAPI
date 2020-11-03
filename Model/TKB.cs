@@ -6,7 +6,7 @@ namespace Model
 {
     public class TKB
     {
-        public string id {set;get;}
+        public int id {set;get;}
         public string ten {set;get;}
         public string hinhanh {set;get;}
     }

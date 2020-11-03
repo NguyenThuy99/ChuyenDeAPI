@@ -75,8 +75,8 @@ namespace DAL
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_loaichude_all",
-                "@id", model.id,
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_loaichude_create",
+               /* "@id", model.id,*/
                "@tenchude", model.tenchude);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {

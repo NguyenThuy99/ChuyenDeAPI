@@ -19,6 +19,10 @@ namespace BLL
         {
             return _res.GetDataAll();
         }
+        public ThucDon GetDatabyID(string id)
+        {
+            return _res.GetDatabyID(id);
+        }
         public bool Delete(int id)
         {
             return _res.Delete(id);

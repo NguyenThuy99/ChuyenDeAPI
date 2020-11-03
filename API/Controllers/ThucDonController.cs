@@ -30,8 +30,6 @@ namespace API.Controllers
         [HttpGet]
         public IActionResult DeleteUser(int id)
         {
-
-
             _itemBusiness.Delete(id);
             return Ok();
         }
@@ -62,6 +60,12 @@ namespace API.Controllers
 
             _itemBusiness.Update(model);
             return model;
+        }
+        [Route("get-by-id/{id}")]
+        [HttpGet]
+        public ThucDon GetDatabyID(string id)
+        {
+            return _itemBusiness.GetDatabyID(id);
         }
     }
 }
