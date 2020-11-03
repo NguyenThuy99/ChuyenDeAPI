@@ -11,7 +11,7 @@ namespace DAL
     public partial class TKBRepository : ITKBRepository
     {
         private IDatabaseHelper _dbHelper;
-
+         
         public TKBRepository(IDatabaseHelper dbHelper)
         {
             _dbHelper = dbHelper;
@@ -36,7 +36,7 @@ namespace DAL
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_thucdon_delete",
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_tkb_delete",
                 "@id", id);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {

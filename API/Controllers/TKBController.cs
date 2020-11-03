@@ -25,12 +25,10 @@ namespace API.Controllers
         {
             return _itemBusiness.GetDataAll();
         }
-        [Route("delete-tkb{id}")]
+        [Route("delete-tkb/{id}")]
         [HttpGet]
         public IActionResult DeleteUser(int id)
         {
-
-
             _itemBusiness.Delete(id);
             return Ok();
         }
