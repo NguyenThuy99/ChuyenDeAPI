@@ -53,9 +53,7 @@ namespace API.Controllers
         [Route("delete-tintuc/{id}")]
         [HttpGet]
         public IActionResult DeleteUser(int id)
-        {
-            
-          
+        {                   
             _itemBusiness.Delete(id);
             return Ok();
         }

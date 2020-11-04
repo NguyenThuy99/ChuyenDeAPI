@@ -43,7 +43,7 @@ namespace DAL
                     "@id", model.id,
                 "@idcd", model.idcd,
                 "@tieude", model.tieude,
-                "@ngaydang", model.ngaydang,                
+/*                "@ngaydang", model.ngaydang,    */            
                 "@noidung", model.noidung);
 
 
@@ -65,10 +65,8 @@ namespace DAL
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_chude_create",
-               /* "@id", model.id,*/
                 "@idcd", model.idcd,
                 "@tieude", model.tieude,
-             /*   "@ngaydang", model.ngaydang,*/
                 "@noidung", model.noidung);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {

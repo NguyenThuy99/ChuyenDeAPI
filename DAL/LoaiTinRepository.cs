@@ -57,9 +57,9 @@ namespace DAL
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_loaitin_update",
                     "@id", model.id,
-                "@tenloai", model.tenloai,
-
+                "@tenloai", model.tenloai,               
                 "@mota", model.mota);
+
 
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -77,10 +77,8 @@ namespace DAL
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_loaitin_create",
-                //"@id", model.id,
-                "@tenloai", model.tenloai,
-                
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_loaitin_create",             
+                "@tenloai", model.tenloai,           
                 "@mota", model.mota);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
