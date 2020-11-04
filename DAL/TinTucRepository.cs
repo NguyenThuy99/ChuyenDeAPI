@@ -104,7 +104,6 @@ namespace DAL
                 "@tieude", model.tieude,
                 "@hinhanh", model.hinhanh,
                 "@mota", model.mota,
-
                 "@noidung", model.noidung);
 
               
