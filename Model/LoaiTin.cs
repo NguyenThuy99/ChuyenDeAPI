@@ -8,7 +8,6 @@ namespace Model
     {
         public int id { get; set; }
         public string tenloai { get; set; }
-
         public string mota { get; set; }
     }
 }

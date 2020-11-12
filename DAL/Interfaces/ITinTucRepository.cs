@@ -14,7 +14,6 @@ namespace DAL.Interfaces
         bool Update(TinTuc model);
         bool Delete(int id);
         List<TinTuc> GetTinTheoLoai(int idloai);
-
-       
+        List<TinTuc> Search(int pageIndex, int pageSize, out long total, string tieude);
     }
 }

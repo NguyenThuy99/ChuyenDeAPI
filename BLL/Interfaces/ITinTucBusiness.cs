@@ -13,6 +13,6 @@ namespace BLL
         bool Update(TinTuc model);
         bool Delete(int id);
         List<TinTuc> GetTinTheoLoai(int id);
-        /* List<TinTuc> Search(int pageIndex, int pageSize, out long total, string item_group_id);*/
+        List<TinTuc> Search(int pageIndex, int pageSize, out long total, string tieude);
     }
 }

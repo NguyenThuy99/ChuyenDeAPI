@@ -13,6 +13,7 @@ namespace DAL
     {
         private IDatabaseHelper _dbHelper;
         
+
         public TinTucRepository(IDatabaseHelper dbHelper)
         {
             _dbHelper = dbHelper;
@@ -129,6 +130,26 @@ namespace DAL
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
                 return dt.ConvertTo<TinTuc>().FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<TinTuc> Search(int pageIndex, int pageSize, out long total, string tieude)
+        {
+            string msgError = "";
+            total = 0;
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_tintuc_search",
+                    "@page_index", pageIndex,
+                    "@page_size", pageSize,
+                    "@tieude", tieude);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                if (dt.Rows.Count > 0) total = (long)dt.Rows[0]["RecordCount"];
+                return dt.ConvertTo<TinTuc>().ToList();
             }
             catch (Exception ex)
             {

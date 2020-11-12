@@ -13,6 +13,5 @@ namespace Model
         public string mota { get; set; }
         public string noidung { get; set; }
         public DateTime? ngaydang { get; set; }
-
     }
 }
