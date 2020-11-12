@@ -12,5 +12,6 @@ namespace DAL.Interfaces
         bool Create(ThucDon model);
         List<ThucDon> GetDataAll();
         ThucDon GetDatabyID(string id);
+        List<ThucDon> GetByNamHoc(int namhoc);
     }
 }

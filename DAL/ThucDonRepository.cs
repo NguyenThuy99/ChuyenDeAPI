@@ -93,6 +93,22 @@ namespace DAL
                 throw ex;
             }
         }
+        public List<ThucDon> GetByNamHoc(int namhoc)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getThucDonTheoNamHoc",
+                    "@namhoc",namhoc);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<ThucDon>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public ThucDon GetDatabyID(string id)
         {
             string msgError = "";

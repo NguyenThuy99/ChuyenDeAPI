@@ -19,6 +19,10 @@ namespace BLL
         {
             return _res.GetDataAll();
         }
+        public List<ThucDon> GetByNamHoc(int namhoc)
+        {
+            return _res.GetByNamHoc(namhoc);
+        }
         public ThucDon GetDatabyID(string id)
         {
             return _res.GetDatabyID(id);

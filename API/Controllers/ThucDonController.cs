@@ -113,6 +113,12 @@ namespace API.Controllers
             var kq = _itemBusiness.Update(model);
             return Ok(kq);
         }
+        [Route("get-by-nam-hoc/{namhoc}")]
+        [HttpGet]
+        public IEnumerable<ThucDon> GetByNamHoc(int namhoc)
+        {
+            return _itemBusiness.GetByNamHoc(namhoc);
+        }
         [Route("get-by-id/{id}")]
         [HttpGet]
         public ThucDon GetDatabyID(string id)
