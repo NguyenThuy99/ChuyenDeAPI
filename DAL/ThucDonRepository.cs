@@ -78,7 +78,7 @@ namespace DAL
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_thucdon_create",
-               "@id", model.id,
+               /*"@id", model.id,*/
                
                 "@tieude", model.tieude,
                 "@hinhanh", model.hinhanh);
